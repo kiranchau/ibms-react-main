@@ -1,0 +1,647 @@
+@import './components/SCSS/cssVariable.scss';
+@import '../src/components//SCSS/file-upload.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $RFntFmly;
+}
+
+.App {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-size: $commonFntSize;
+  width: 100vw;
+}
+.ant-table-body{
+  min-height: 350px;
+  height: calc(-240px + 100vh);
+  overflow: auto!important;
+}
+.billpage{
+  .ant-table-body{
+    height: calc(-320px + 100vh);
+  }
+}
+.ant-picker-dropdown{
+  z-index: 9999!important;
+}
+.see-more-btn{
+  color: blue;
+  font-size: 12px;
+  margin-top: 3px;
+  cursor: pointer;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+.cancel-button{
+  margin-top: 20px;
+  color: #000;
+  text-decoration: none;
+  align-items: center;
+  &:hover{
+    color: $logo2-color;
+  }
+}
+.userpage{
+  .ant-table-body{
+    height: calc(-230px + 100vh);
+  }
+}
+.call-log-popup{
+  .popBody {
+    max-height: max-content!important;
+  }
+  .ant-table-body{
+    height: 300px;
+    min-height:200px;
+    max-height:500px;
+    overflow: auto;
+  }
+}
+.notificationpage-wrap{
+  .ant-table-body{
+    height: calc(-240px + 100vh);
+  }
+}
+.customer-body{
+  .ant-table-body{
+    height: 200px;
+    min-height: 212px;
+  }
+}
+.assign-user-container{
+  .ant-table-body{
+    height: 200px;
+    min-height: 212px;
+  }
+  .user-name-wrap{
+    .ant-table-header{
+      z-index: 1;
+    }
+  }
+}
+.PageContent {
+  width: 100%;
+  margin-top: 70px;
+  overflow: auto;
+}
+textarea{
+  font-size: 14px;
+  color: #000;
+  min-height: 70px!important;
+}
+.ant-table-thead{
+  th{
+    font-family: $commonfntFmly;
+    padding: 16px 16px !important;
+    span{
+      font-family: $commonfntFmly;
+    }
+  }
+}
+.TBtn {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  box-shadow: inset -0.5px -0.5px 1px rgba($color: #000000, $alpha: 0.25);
+  border-radius: 3px;
+  background-color: $white-color;
+}
+
+.TBtn:hover {
+  box-shadow: inset 0.5px 0.5px 1px rgba($color: #000000, $alpha: 0.25);
+  background-color: $logo2-color !important;
+  color: $white-color;
+}
+
+.TBtn.active-btn {
+  box-shadow: inset 0.5px 0.5px 1px rgba($color: #000000, $alpha: 0.25);
+  background-color: $logo2-color !important;
+  color: $white-color;
+}
+
+tr {
+  border-left: 1px solid $light-color;
+  border-right: 1px solid $light-color;
+}
+.form-control {
+  border: none;
+  border-bottom: 2px solid $primary-color;
+  border-radius: 0px;
+  background-color: transparent;
+  
+}
+
+.form-control:focus {
+  border: none;
+  border-bottom: 1ps solid $primary-color;
+  border-radius: none;
+  box-shadow: none;
+  outline: none;
+  background-color: transparent;
+
+
+}
+
+.quickpopup{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 9999;
+  background: rgba($color: #000000, $alpha: 0.7);
+  .quickpopupDesign{
+    background-color: $white-color;
+    min-width: 30%;
+    text-align: center;
+    .OkBtn{
+      width: 50px;
+      height: 50px;
+      background-color: $primary-color;
+      color: $white-color;
+      font-family: $capFntFmly;
+      font-size: 32px;
+    }
+  }
+}
+
+
+.App::-webkit-scrollbar{
+  background-color:$lightLogo1-color;
+  width: 10px;
+  height: 5px;
+  border-radius: 30px;
+  
+}
+
+.App::-webkit-scrollbar-thumb {
+  background-color:$lightLogo1-color;
+  border-radius: 30px;
+}
+*::-webkit-scrollbar:hover {
+  width: 10px;
+  transition: width 0.5s ease-in;
+  
+}
+*:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+}
+
+.ant-table-body::-webkit-scrollbar {
+  width: 10px; /* Width of the vertical scrollbar */
+  height: 10px; /* Height of the horizontal scrollbar */
+}
+
+.ant-table-body::-webkit-scrollbar-thumb {
+  background: #bbb; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Radius of the scrollbar thumb */
+}
+
+.ant-table-body::-webkit-scrollbar-thumb:hover {
+  background: #999; /* Color of the scrollbar thumb on hover */
+}
+
+.ant-table-body::-webkit-scrollbar-track {
+  /* Style for the scrollbar track */
+  background: #f4f4f4; /* Color of the scrollbar track */
+}
+.myNewSpin{
+  font-size: 5em;
+  color: $primary-color;
+}
+
+.ant-table-filter-dropdown{
+  .ant-space-vertical{
+    max-width: 300px;
+    max-height: 320px;
+    overflow: auto;
+  }
+  .input-tip{
+    margin-left: 4px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, .5);
+  }
+}
+.ant-table-filter-dropdown-btns{
+  button{
+    &:nth-child(2){
+      background-color: $primary-color;
+      &:hover{
+        background-color: $logo2-color!important;
+      }
+    }
+  }
+}
+.ant-btn-primary{
+  background-color: $primary-color!important;
+  &:hover{
+    background-color: $logo2-color!important;
+  }
+}
+.more-option-wrap{
+  .dropdown-menu{
+    position: fixed!important;
+    z-index: 999;
+  }
+}
+table{
+
+  td{
+    word-wrap: break-word!important;
+    text-wrap: wrap!important;
+    // width: 150px!important;
+    // max-width: 100%!important;
+    // min-width: 100px!important;
+  }
+  tr:nth-child(even) {
+    background-color: $light-color;
+}
+tr{
+  vertical-align: baseline;
+  &:hover{
+    background-color: #E4D0E4!important;
+    td{
+      background-color: #E4D0E4!important;
+    }
+  }
+
+}
+.ant-table-placeholder{
+  &:hover{
+    background-color: #FFF!important;
+    td{
+      background-color: #FFF!important;
+    }
+  }
+}
+}
+.popups .pophead .myIcon{
+  display: flex;
+}
+.ant-table-column-sort{
+  background-color: transparent!important;
+}
+.PageContent{
+  table{
+    th{
+      font-size: 12px;
+    }
+    .ant-table-row td{
+      font-size: 12px;
+    padding: 8px 16px!important;
+    font-family:$RFntFmly!important ;
+   div,p,span{
+    font-family:$RFntFmly!important ;
+   }
+    }
+    
+  }
+}.ant-table-wrapper .ant-table-filter-trigger.active, 
+ .ant-table-column-sorter-up.active,
+ .ant-table-column-sorter-down.active{
+  color: $logo2-color!important;
+}
+.ant-picker-active-bar {
+  background:$primary-color!important;
+}
+.ant-picker-focused.ant-picker {
+  border-color: $primary-color;
+}
+.ant-picker {
+  &:hover,
+  &:active,
+  &:focus {
+    border-color: $primary-color!important;
+  }
+}
+.ant-btn-link{
+  color: $logo2-color;
+}
+.ant-picker{
+  border: 2px solid #CCABCD;
+  border-radius: 6px;
+
+  &:focus{
+      outline: none;
+      border: 2px solid $primary-color;
+      box-shadow: none;
+  }
+  input{
+      border: none;
+      font-size: 14px!important;
+      &:focus{
+          border: none;
+      }
+  }
+ 
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.accordion{
+  .ant-table-sticky-scroll{
+    display: none;
+  }
+  .accordion-item{
+    .accordion-button {
+      border-bottom: 3px solid #a563a6;
+      // box-shadow: 2px 3px 2px -1px rgba(161,161,161,1);
+    }
+    .accordion-body{
+      .credit-card-wrapper{
+        .ant-table-body{
+          min-height: 80px;
+        }
+      }
+    }
+  }
+
+}
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.PageContent{
+  table{
+    width: 100%;
+    min-width: 800px;
+    overflow: auto;
+    
+  }
+  .ant-table-footer{
+    position: absolute;
+    background-color: transparent;
+}
+}
+.form-floating{
+  .phone-select{
+    width: 150px;
+  }
+  input,select{
+    font-size: 14px;
+  }
+}
+.user-form-wrap{
+  padding: 0!important;
+}
+.notificationpage-wrap{
+  .ant-table-cell{
+    p{
+      display: flex;
+      flex-direction: column;
+    }
+    img{
+      width: 90px;
+      height: 50px;
+      object-fit: contain;
+      border: 1px solid #dedede;
+      border-radius: 4px;
+    }
+    
+  }
+}
+
+.ant-upload-wrapper{
+  .ant-upload {
+    height: auto;
+  }
+}
+.ant-upload-list.ant-upload-list-text{
+  display: flex;
+  flex-direction: column-reverse;
+}
+#button-tooltip{
+  font-size: 11px;
+}
+.user-list-wrap{
+  height: 150px;
+  overflow: auto;
+  label{
+    font-size: 12px;
+  }
+}
+.ant-upload-list-item-thumbnail{
+  border-radius: 6px;
+}
+.high-priority-task{
+  background-color: #fecede!important;
+}
+.custom-file-item {
+  .ant-upload-list-item-name{
+    text-decoration: none;
+    font-family: $RFntFmly;
+  }
+  .upload-file-name{
+    a{
+      width: 150px;
+      font-size: 12px;
+    }
+  }
+}
+.file-error{
+  .custom-file-info{
+    border: 1px solid red;
+  }
+ 
+  .file-error-text{
+    color: red!important;
+    font-family: $RFntFmly;
+  }
+  .ant-upload-list-item-name{
+    font-family: $RFntFmly;
+  }
+}
+.redirect-icon {
+  height: 1.3em;
+  width: 2em;
+  cursor: pointer;
+}
+.redirect-cusor {
+  cursor: pointer;
+}
+.filter-yellow-color {
+  svg{
+    fill: $logo2-color !important;
+  }
+}
+// TimeRage
+.start-end-time{
+  display: flex;
+  flex-wrap: wrap;
+  .time{
+    flex:1
+  }
+}
+.accordion-body{
+  .credit-card-wrapper{
+    .TBtn{
+      width: 23px;
+    }
+    .header{
+      background-color: $logo1-color;
+      color: $white-color;
+      font-size: 14px;
+      align-items: center;
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
+.ant-table-row-selected{
+  .ant-table-cell{
+    background-color: #e6f4ff!important;
+  }
+}
+// custom select box
+.custom-select-box-wrap{
+  display: flex;
+    align-items: center;
+    background: white;
+    padding-right: 12px;
+    border-radius: 4px;
+    border: 2px solid #CCABCD;
+    gap: 10px;
+  .custom-select{
+    flex: 1;
+    select{
+      // background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAz0lEQVR4Xu2SwQkAIAhEX//9y+IISI6kjCuE6N79SwC43WJDXJHeLBYeCBkFR9aIIGzfC2QJyvC7JF4LjwnEz5FtBc/JE4Iy3Kz8kXRBydYlRfXfVga6v1goDuk1TakRfEIEHQyqF3Z1xUUQNRvKVHUqYwWlVFhq+uB1soqX4YiEQBhZGptblABAAAAAElFTkSuQmCC');
+      // padding-right: 70px;
+      border: none;
+      &:focus{
+        border: none;
+      }
+    }
+  
+  }
+  .icon{
+    // position: absolute;
+    // right: 15px;
+    // top: 21px;
+    // display: flex;
+    // align-items: center;
+    // gap: 20px;
+    .icon-style{
+        width: 16px;
+        height: 16px;
+        z-index: 1;
+        cursor: pointer;
+        &:hover{
+          fill: $logo2-color;
+        }
+    }
+    .arrow-icon{
+      @extend .icon-style;
+      right: 50px;
+      z-index: 0;
+      cursor:auto;
+    }
+  }
+}
+.bg-select-color{
+  background-color: #e9ecef;
+}
+.ant-table-sticky-scroll{
+  width: 0;
+  height: 0!important;
+}
+
+.popups{
+  .successfully-popup{
+    width: auto;
+    background-color: #fff;
+    padding: 10px;
+    .success-icon{
+      font-size: 50px;
+      color: green;
+      margin-bottom: 20px;
+    }
+    .text-center{
+      padding: 20px 60px 10px 60px;
+    }
+    .popfoot{
+      border: none;
+    }
+  }
+}
+@media screen and (max-width:1024px){
+  .billpage{
+    padding-top: 0!important;
+    .ant-table-body{
+      min-height:320px;
+    }
+  }
+}
+@media screen and (max-width:992px){
+  .addpopups{
+    .hours-time-wrap{
+      width: 100%!important;
+      margin-bottom: 10px;
+    }
+  }
+  #button-tooltip{
+    display: none;
+  }
+  .ant-tooltip{
+    display: none;
+  }
+}
+@media screen and (max-width:576px) {
+  .PageContent .ant-table-footer{
+    position: unset;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+  }
+  .start-end-time{
+    .time{
+      flex:100%;
+    }
+  }
+  .PageContent .ant-pagination {
+    justify-content: center;
+    margin: 4px 0!important;
+  }
+  .ant-picker-panel-container{
+    // width: 94%!important;
+    // margin: 0 auto!important;
+    // position: absolute;
+    bottom: -250px;
+    .ant-picker-panels{
+      flex-wrap: wrap!important;
+    }
+  }
+  .not-found-wrap{
+    margin-top: 30px;
+  }
+}
+@media screen and (max-width:480px){
+  .notificationpage-wrap{
+    .header{
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .ant-table-body{
+      height: calc(-262px + 94vh);
+    }
+  }
+  .ant-table-body{
+    height: calc(-240px + 97vh);
+  }
+  .userpage{
+    .ant-table-body{
+      height: calc(-240px + 97vh);
+    }
+  }
+
+  .popups .pophead{
+    font-size: 14px;
+  }
+}
+

@@ -1,0 +1,19 @@
+@import '../SCSS/cssVariable.scss';
+
+.sqbutton{
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    box-shadow: $insetShadow;
+    box-shadow: $shadow;
+    font-family: $commonfntFmly;
+    font-size: $commonFntSize;
+    width: max-content;
+}
+.sqbutton:hover{
+    background-color: $logo2-color;
+    color: $primary-color;
+}

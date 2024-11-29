@@ -1,0 +1,20 @@
+@import '../SCSS/cssVariable.scss';
+
+.button{
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 20rem;
+    border: none;
+    box-shadow: $insetShadow;
+    box-shadow: $shadow;
+    font-family: $commonfntFmly;
+    font-size: $commonFntSize;
+    display: inline;
+    width: fit-content;
+}
+.button:hover{
+    background-color: $logo2-color;
+    color: $primary-color;
+}

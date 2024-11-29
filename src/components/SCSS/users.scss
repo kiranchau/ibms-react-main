@@ -1,0 +1,169 @@
+@import '../SCSS/cssVariable.scss';
+
+@mixin tableIcon($bgColor: '#000000') {
+    background-color: $bgColor;
+    width: 25px;
+    height: 25px;
+}
+
+@include contentHearderBtn();
+@include tableLoading();
+
+.userpage {
+
+        @include tableScroll();
+
+        .custTable {
+         width: 100%;
+        // height: 93%;
+        // overflow-y: auto;
+        }
+
+        .bottomBar {
+            position: absolute;
+            bottom: 0px;
+            background-color: $white-color;
+            width: 100%;
+
+            .btmwidth {
+
+                box-shadow: 0px -4px 4px rgba($color: #000000, $alpha: 0.25);
+
+                .btmbtn {
+                    display: inline;
+                    width: fit-content;
+                }
+
+                .prevBtn {
+                    background-color: $light-color3;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        table {
+            width: 100%;
+
+            th {
+                @include tableth();
+            }
+
+            td {
+                @include tabletd();
+            }
+
+            td:nth-child(1), th:nth-child(1) {
+                width: 5% !important;
+            }
+
+            td:nth-child(2), th:nth-child(2) {
+                width:auto !important;
+            }
+
+            td:nth-child(3), th:nth-child(3) {
+                width:auto !important;
+            }
+
+            td:nth-child(4), th:nth-child(4) {
+                width: auto !important;
+            }
+
+            tr:nth-child(even) {
+                background-color: $light-color;
+            }
+
+            tr:hover {
+                background-color: $light-color3;
+            }
+
+            tr {
+                cursor: pointer;
+            }
+
+            .pass {
+                @include tableIcon($white-color);
+            }
+
+        }
+    
+}
+
+
+
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .hide-content{
+    display: none;
+  }
+  .user-form-wrap{
+    padding: 0;
+    .tabs-wrap{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 10px;
+        .tab{
+            background-color: #cccccc;
+            padding: 0px 6px;
+            border: 1px solid #acacac;
+            border-radius: 4px;
+            cursor: pointer;
+            input{
+                margin-left: 3px   ;
+            }
+        }
+        .active{
+            border-color: $logo2-color;
+            color: #fff;
+            background-color: $logo2-color;
+            svg{
+                fill: #fff;
+            }
+            img{
+                filter: brightness(0) invert(1);
+            }
+        }
+        .input-wrap{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+            cursor: pointer;
+            // height: 45px;
+        }
+        // .active {
+        //     border: 1px solid;
+        // }
+        
+      }
+      .input-row{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 15px;
+        .check-box-container{
+            display: flex;
+            flex-wrap: wrap;
+            .form-check{
+                width: 50%;
+            }
+        }
+        .addCust{
+            flex: 49%;
+            margin: 0;
+            
+            .form-check{
+                width: 50%;
+            }
+        }
+    }
+  }
+ 

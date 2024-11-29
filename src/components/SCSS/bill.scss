@@ -1,0 +1,611 @@
+@import '../SCSS/cssVariable.scss';
+
+$borderLinearGradient: linear-gradient(to right,red, rgba(0, 0, 0, 0)) 1 100%;
+
+@mixin boxDesign($zIndex: 9, $myWidth: 19vw){
+    width: $myWidth;
+    height: 5vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    z-index: $zIndex ;
+    filter: drop-shadow(1px 0px 3px rgba(0,0,0,0.3));
+    transition: all 0.5ms ease-in-out;
+    .headTitle {
+        font-size: $mainFntSize;
+        z-index: 999;
+        color: #000000;
+        font-size: 14px;
+    }
+}
+
+@mixin boxActiveDesign($myWidth: 19vw){
+    width: $myWidth;
+    height: 5vh;
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    z-index: 10;
+    transition: all 0.5ms ease-in-out;
+    .headTitle {
+        font-size: $mainFntSize;
+        z-index: 999;
+        color: #000000;
+        position: absolute;
+        text-decoration: underline;
+        font-size: 14px;
+    }
+}
+
+.main-container{
+    box-shadow: 0px 3px 6px rgba(165, 99, 166, 0.54);
+    overflow: hidden;
+    border-radius: 10px;
+   .disabled{
+        background-color: #999;
+        cursor: no-drop!important;
+        &:hover{
+            color: #fff;
+        }
+   }
+}
+.ant-pagination {
+    background-color: #fff;
+    margin: 0!important;
+    padding: 8px 0;
+    border-radius: 0 0 8px 8px;
+}
+.billpage {
+    padding: 1rem;
+    .error-msg{
+        flex-direction: column;
+    }
+    .BillItems{
+        table{
+            min-width: 1000px;
+        }
+        .selectBox-wrap{
+            width: 20%;
+            select{
+                border: 2px solid #CCABCD !important;
+                font-size: 13px;
+            }
+        }
+    }
+    .ant-picker-active-bar {
+        background:$primary-color;
+      }
+      .ant-picker-focused.ant-picker {
+        border-color: $primary-color;
+      }
+      .ant-picker {
+        &:hover,
+        &:active,
+        &:focus {
+          border-color: $primary-color!important;
+        }
+      }
+    .ant-picker{
+        border: 2px solid #CCABCD;
+        border-radius: 6px;
+     
+        &:focus{
+            outline: none;
+            border: 2px solid $primary-color;
+            box-shadow: none;
+        }
+        input{
+            border: none;
+            font-size: 14px!important;
+            &:focus{
+                border: none;
+            }
+        }
+       
+    }
+    .ant-pagination {
+        background-color: #fff;
+        margin: 0!important;
+        padding: 8px 0;
+    }
+    .billSearch{
+        width: 20%;
+    }
+    .calcValue{
+        display: flex;
+        h6{
+            font-size: 13px;
+        }
+    }
+    .billTab {
+        display: flex;
+        z-index: 999;
+        width: 100%;
+
+        .tabBtn {
+            background-color: $logo1-color;
+            padding: 10px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: $white-color;
+            box-shadow: $insetShadow;
+        }
+
+        .active {
+            z-index: 99;
+            background-color: transparent;
+            color: $primary-color;
+            // box-shadow:inset 2px 2px 4px rgba($color: #000000, $alpha: 0.5)
+        }
+    }
+
+    .total {
+        font-size: $mainFntSize;
+
+        span {
+            color: $logo2-color;
+        }
+    }
+
+    .billInBtn {
+        padding: 6px 10px;
+
+    }
+
+    .content {
+        display: none;
+    }
+
+    .showContent {
+    // position: relative;
+    z-index: 999;
+        display: block;
+        // padding: 0.5rem 0rem;
+        border-radius: 0px 10px 10px;
+        background-color: $lightLogo1-color;
+        table{
+            table-layout: fixed !important;
+        }
+    }
+
+.billTab{
+    .box:nth-child(1) {
+        @include boxDesign($zIndex: 8);
+        padding-left: 20px;
+    }
+
+    .box:nth-child(2) {
+     @include boxDesign($zIndex: 7)
+    }
+    
+    .box:nth-child(3) {
+     @include boxDesign($zIndex: 5)
+    }
+   
+    .box:nth-child(4) {
+     @include boxDesign($zIndex: 3)
+    }
+
+    .box:nth-child(1)::after {
+        content: '';
+        position: absolute;
+        right: -0vw;
+        bottom: 0;
+        width: 19vw;
+        height: 5vh;
+        z-index: 9;
+        border-bottom: 5vh solid #f8f8f8;
+        border-right: 50px solid transparent;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .box:nth-child(2)::after,
+    .box:nth-child(3)::after,
+    .box:nth-child(4)::after {
+        content: '';
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: -0vw;
+        bottom: 0;
+        width: 22vw;
+        height: 5vh;
+        z-index: 9;
+        border-bottom: 5vh solid #f8f8f8;
+        border-right: 50px solid transparent;
+        // border-left: 50px solid transparent;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        
+    }
+
+  .active:nth-child(1) {
+        width: 19vw;
+        height: 5vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        padding-left: 20px;
+        text-decoration: underline;
+    z-index: 10;
+        .headTitle {
+            font-size: $mainFntSize;
+            z-index: 999;
+            font-size: 14px;
+        }
+    }
+
+    .active:nth-child(2){
+        @include boxActiveDesign();
+        padding-left: 10px;
+        
+    }
+   
+    .active:nth-child(3){
+        @include boxActiveDesign();
+        padding-left: 23px;
+        text-decoration: underline;
+    }
+
+    .active:nth-child(4) {
+        @include boxActiveDesign();
+        padding-left: 23px;
+        text-decoration: underline;
+    }
+
+    .active:nth-child(1)::after {
+        content: '';
+        position: absolute;
+        right: -0vw;
+        bottom: 0;
+        width: 19vw;
+        height: 5vh;
+        z-index: 9;
+        border-bottom: 5vh solid $lightLogo1-color;
+        border-right: 50px solid transparent;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .active:nth-child(2)::after,
+    .active:nth-child(3)::after,
+    .active:nth-child(4)::after {
+        content: '';
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        right: -0vw;
+        bottom: 0;
+        width: 22vw;
+        height: 5vh;
+        z-index: 9;
+        border-bottom: 5vh solid $lightLogo1-color;
+        border-right: 50px solid transparent;
+        border-left: 50px solid transparent;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+}
+    .mainbox {
+        width: 100%;
+        background-color: $logo2-color;
+        height: 100%;
+    }
+    .form-control:focus{
+        border: 2px solid black;
+        box-shadow: none;
+    }
+    .form-control{
+        border: 2px solid #CCABCD;
+        border-radius: 5px;
+    }
+    .totalColor{
+        color: $logo2-color;
+    }
+    .BillClearBtn{
+        background-color: $white-color;
+        padding: 5px;
+        color: $logo1-color;
+        font-size: 1.8em;
+        line-height: 0.9;
+        border: none;
+        border-radius: 5px;
+        &:hover{
+            background-color: $primary-color;
+            color: $white-color
+        }
+    }
+    .main-container{
+        .ant-picker{
+            padding: 7px 9px;
+        }
+        th:nth-child(5), td:nth-child(5){
+            width: 15%;
+        }
+    }
+    .Payables{
+        th:nth-child(6), td:nth-child(6){
+            width: 15%;
+        }
+    }
+    
+}
+@media screen and (max-width:540px){
+    .billpage {
+        .billSearch{
+            order: 1;
+            margin-right: 0!important;
+        }
+        .billdatepicker{
+            width: 100%;
+            .ant-picker {
+                width: 100%;
+            }
+        }
+}
+    }
+
+
+
+
+@media only screen and (max-width: 844px) {
+    .billpage{
+        .showContent{
+            table{
+        // table-layout: auto !important;
+              background-color: white;
+    }
+    }
+        .billSearch{
+            width: 100%;
+        }
+        .billSubHead{
+            gap: 10px;
+        }
+        .billTab{
+            .box:nth-child(1) {
+                @include boxDesign($zIndex: 8, $myWidth: 40vw);
+                padding-left: 20px;
+            }
+        
+            .box:nth-child(2) {
+             @include boxDesign($zIndex: 7, $myWidth: 40vw)
+            }
+            
+            .box:nth-child(3) {
+             @include boxDesign($zIndex: 5, $myWidth: 40vw)
+            }
+           
+            .box:nth-child(4) {
+             @include boxDesign($zIndex: 3, $myWidth: 40vw)
+            }
+        
+            .box:nth-child(1)::after {
+                content: '';
+                position: absolute;
+                right: -0vw;
+                bottom: 0;
+                width: 40vw;
+                height: 5vh;
+                z-index: 9;
+                border-bottom: 5vh solid #f8f8f8;
+                border-right: 50px solid transparent;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        
+            .box:nth-child(2)::after,
+            .box:nth-child(3)::after,
+            .box:nth-child(4)::after {
+                content: '';
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: -0vw;
+                bottom: 0;
+                width: 45vw;
+                height: 5vh;
+                z-index: 9;
+                border-bottom: 5vh solid #f8f8f8;
+                border-right: 50px solid transparent;
+                // border-left: 50px solid transparent;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                
+            }
+        
+            .active:nth-child(1) {
+                width: 40vw;
+                height: 5vh;
+                position: relative;
+                display: flex;
+                align-items: center;
+                border-radius: 20px;
+                padding-left: 20px;
+                text-decoration: underline;
+            z-index: 10;
+                .headTitle {
+                    font-size: $mainFntSize;
+                    z-index: 999;
+                }
+            }
+        
+            .active:nth-child(2){
+                @include boxActiveDesign($myWidth: 40vw);
+                padding-left: 10px;
+                
+            }
+           
+            .active:nth-child(3){
+                @include boxActiveDesign($myWidth: 40vw);
+                padding-left: 23px;
+                text-decoration: underline;
+            }
+        
+            .active:nth-child(4) {
+                @include boxActiveDesign($myWidth: 40vw);
+                padding-left: 23px;
+                text-decoration: underline;
+            }
+        
+            .active:nth-child(1)::after {
+                content: '';
+                position: absolute;
+                right: -0vw;
+                bottom: 0;
+                width: 40vw;
+                height: 5vh;
+                z-index: 9;
+                border-bottom: 5vh solid $lightLogo1-color;
+                border-right: 50px solid transparent;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        
+            .active:nth-child(2)::after,
+            .active:nth-child(3)::after,
+            .active:nth-child(4)::after {
+                content: '';
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                right: -2vw;
+                bottom: 0;
+                width: 50vw;
+                height: 5vh;
+                z-index: 9;
+                border-bottom: 5vh solid $lightLogo1-color;
+                border-right: 50px solid transparent;
+                border-left: 50px solid transparent;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+        }
+
+}
+}
+.bill-modal{
+    .edit-vlaue-wrap{
+        display: flex;
+        gap: 45px;
+        flex-wrap: wrap;
+        label{
+            color: #959595;
+        }
+        .label-value{
+            .value{
+                font-size: 16px;
+            }
+        }
+    }
+    .edit-table{
+        .title{
+            border-bottom: 1px dashed #999;
+            padding-bottom: 10px;
+        }
+        .rowstyle{
+            display: flex;
+            .column{
+                flex: 1;
+                .header{
+                    background-color: rgb(202, 202, 202);
+                    padding: 6px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .edit-field{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 20px;
+        .input-wrap{
+            flex: 1;
+        }
+        .myInputBox{
+            flex: 1;
+            .ant-picker{
+                border: none;
+                padding: 0;
+                height: auto!important;
+                width: 100%!important;
+                &:focus{
+                   border: none;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1200px){
+    .bill-modal {
+        .edit-vlaue-wrap {
+           gap: 15px;
+           justify-content: space-between;
+           margin-bottom: 10px;
+           .label-value{
+            .value{
+                margin: 0;
+            }
+           }
+        }
+    }
+}
+@media screen  and (max-width:768px){
+    .billpage{
+        .ant-table-body{
+            height: calc(100vh - 430px )!important;
+        }
+        .custbill-tab-wrap{
+            .ant-table-body{
+                height: calc(100vh - 312px )!important;
+            }
+        }
+        .BillItems{
+            table{
+                min-width: 1400px;
+            }
+        }
+     
+    }
+}
+@media screen  and (max-width:580px){
+    .billpage{
+        padding: 0 10px 10px 10px;
+        .headTitle{
+            font-size: 12px!important;
+        }
+        .BillItems{
+            .selectBox-wrap{
+             width: 100%;
+             margin-left: 0!important;
+            }
+        }
+        .calcValue{
+            display: flex;
+            gap: 5px;
+            padding: 0!important;
+            justify-content: space-between;
+            width: 100%;
+            h6{
+                font-size: 13px;
+                padding: 0!important;
+            }
+        }
+     
+    }
+    
+}

@@ -1,0 +1,40 @@
+@import '../SCSS/cssVariable.scss';
+
+.msgBody{
+    background-color: $white-color;
+    box-shadow: $shadow;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    .sender{
+        border-bottom: 2px solid $primary-color;
+        line-height: 1;
+        padding-right: 10px;
+    }
+    .postDate{
+        font-size: $smallFntSize;
+        color: $light-color3;
+    }
+    .description{
+        font-family: $lightFntFmly;
+        padding: 5px 0px;
+    }
+    .postfoot{
+        border-top: 2px solid $light-color3;
+        padding: 5px 0px 0px;
+        .msgButton{
+            border: 0.2px solid $light-color3;
+            margin-right: 10px;
+            padding: 2px 10px;
+            border-radius: 20px;
+            color: $logo1-color;
+        }
+        .msgButton:hover{
+          background-color: $logo2-color;
+          border: 0.2px solid white;
+          color: $white-color;
+        }
+    }
+}

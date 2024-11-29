@@ -1,0 +1,7 @@
+@import '../SCSS/cssVariable.scss';
+
+.bgCover{
+    background-color: $white-color;
+    box-shadow: 0px 3px 6px rgba($color: #A563A6, $alpha: 0.54);
+    border-radius: 5px;
+  }

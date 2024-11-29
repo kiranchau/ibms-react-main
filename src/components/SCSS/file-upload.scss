@@ -1,0 +1,14 @@
+.file-upoad-wrap{
+    .ant-upload-wrapper {
+        display: block;
+    }
+}
+.btn-height{
+    height: auto;
+}
+.ant-upload-list-item{
+    background-color: #fff;
+    &:hover{
+        background-color: #fff!important;
+    }
+}

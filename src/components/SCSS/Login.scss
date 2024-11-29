@@ -1,0 +1,166 @@
+@import '../SCSS/cssVariable.scss';
+
+.loginBg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../images/Login/Login.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-contain {
+        // border: 5px solid white;
+        height: 85vh;
+        width: 85vw;
+        // border-radius: 30px;
+        // overflow: hidden;
+        .row{
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        h1{
+            font-size: 2em;
+        }
+        .htmiddle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // height: 81%;
+            input{
+                &:focus{
+                    box-shadow: none;
+                    border: 2px solid $primary-color;
+                }
+            }
+        }
+
+        .signBtn {
+            display: inline-block;
+            width: 100%;
+            margin-top: 30px;
+            @include primaryButton();
+        }
+
+        .signIn {
+            padding: 0.5em 0em 0.5em 0em;
+        }
+
+        .designer {
+            position: absolute;
+            bottom: 40px;
+            left: 50px;
+        }
+
+        .tagline {
+            text-shadow: 0px 4px 4px rgba($color: #000000, $alpha: 0.68);
+            color: white;
+
+            span {
+                color: #E99D22;
+            }
+        }
+
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+            display: none;
+        }
+    }
+
+    .col {
+        background-color: white;
+        height: 85vh;
+    }
+
+    .Fbtm {
+        background-color: white;
+        // height: 85vh;
+        border-radius: 15px;
+        .FbtmScroll{
+            overflow-y: auto;
+        }
+    }
+
+}
+.password-wrap{
+    position: relative;
+    .eye-icon{
+        position: absolute;
+        top: 18px;
+        right: 30px;
+        cursor: pointer;
+    }
+    input{
+        padding-right: 45px!important;
+    }
+}
+.FbtmScroll{
+    img{
+        width: 70%;
+    }
+}
+.FbtmScroll::-webkit-scrollbar{
+    background-color:$lightLogo1-color;
+    width: 7px;
+    border-radius: 30px;
+    
+}
+
+.FbtmScroll::-webkit-scrollbar-thumb {
+    background-color:$lightLogo1-color;
+    border-radius: 30px;
+}
+*::-webkit-scrollbar:hover {
+    width: 12px;
+    transition: width 0.5s ease-in;
+    
+  }
+*:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+}
+.forgot-text{
+   color: $primary-color;
+   &:hover{
+    color: $logo2-color;
+   }
+}
+@media screen and (max-width:992px){
+    .loginBg {
+        .Fbtm{
+            height: auto;
+        }
+        .login-contain {
+            height: auto;
+           
+            .htmiddle{
+                height: auto;
+            }
+            .designer{
+                display: none;
+            }
+        }
+        .FbtmScroll{
+            img{
+                width: 60%;
+            }
+        }
+        .tagline{
+            display: none;
+        }
+    }
+   
+}
+@media screen and (max-width:480px){
+    .loginBg{
+        .FbtmScroll{
+            img{
+                width: 90%;
+            }
+        }
+    }
+  
+}
